@@ -1,7 +1,14 @@
+import React from "react";
+import { ThemeProvider } from "./context/ThemeContext";
+import { AuthProvider } from "./context/AuthContext";
+import MainComponent from "./components/MainComponent";
+
 export default function App() {
   return (
-    <h1 className="text-yellow-700 text-3xl font-bold underline">
-      Hello world!
-    </h1>
-  )
+    <ThemeProvider>
+      <AuthProvider>
+        <MainComponent />
+      </AuthProvider>
+    </ThemeProvider>
+  );
 }
